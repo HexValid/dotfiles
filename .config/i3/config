@@ -57,7 +57,7 @@ exec --no-startup-id xrandr --dpi 96
 exec --no-startup-id xrdb .Xresources
 exec --no-startup-id setxkbmap -layout tr -option caps:super && xcape -e 'Super_L=Escape' && xmodmap -e 'keycode 135 = Super_R' &&  xmodmap -e 'keycode 133 = NoSymbol'
 exec --no-startup-id urxvtd -q -o -f
-exec --no-startup-id sleep 1 && xgamma -gamma 0.85
+exec --no-startup-id sleep 1 && xgamma -gamma 0.95
 exec --no-startup-id unclutter
 
 # design
