@@ -1,0 +1,9 @@
+*
+!.gitignore
+!.vimrc
+!.Xresources
+!.xinitrc
+!.config/i3/*
+!.bash_profile
+!.asoundrc
+!.inputrc
