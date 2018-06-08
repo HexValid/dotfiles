@@ -3,9 +3,7 @@
 !.vimrc
 !.Xresources
 !.xinitrc
-!.config/i3/config
-!.config/i3/i3blocks/i3blocks.conf
-!.config/i3/i3blocks/blocks/*
+!./config/i3/*
 !.bash_profile
 !.asoundrc
 !.inputrc
