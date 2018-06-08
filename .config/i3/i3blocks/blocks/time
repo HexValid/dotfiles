@@ -1,0 +1,4 @@
+#!/bin/bash
+s="<span foreground='#61778D'>"
+e="</span>"
+date "+%d$s.$e%m$s.$e%Y %H$s:$e%M"
