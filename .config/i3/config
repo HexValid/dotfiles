@@ -1,4 +1,4 @@
-# hexvalid's i3-gaps config - revision 38
+# hexvalid's i3-gaps config - revision 39
 
 # colors from .Xresources
 set_from_resource $foreground .foreground
@@ -21,15 +21,15 @@ set_from_resource $color14 .color14
 set_from_resource $color15 .color15
 
 # workspaces
-set	$w1 1
-set	$w2 2
-set	$w3 3
-set	$w4 4
-set	$w5 5
-set	$w6 6
-set	$w7 7
-set	$w8 8
-set	$w9 9
+set $w1 1
+set $w2 2
+set $w3 3
+set $w4 4
+set $w5 5
+set $w6 6
+set $w7 7
+set $w8 8
+set $w9 9
 set	$w10 10
 
 # mod keybinder
@@ -37,7 +37,7 @@ set	$mod Mod4
 
 # launcher keybindings
 bindsym $mod+Mod1+1 exec --no-startup-id icecat 
-bindsym $mod+Mod1+2 exec --no-startup-id urxvtc -e ranger 
+bindsym $mod+Mod1+2 exec --no-startup-id urxvtc -e ranger
 bindsym $mod+Mod1+3 exec --no-startup-id telegram-desktop
 bindsym $mod+t exec --no-startup-id urxvtc
 bindsym $mod+d exec --no-startup-id dmenu_run
@@ -58,141 +58,140 @@ exec --no-startup-id sleep 1 && xgamma -gamma 0.95
 exec --no-startup-id unclutter
 
 # design
-font					pango:IBM Plex Mono Bold 10
-new_window				pixel 3
-new_float				pixel 3
-client.focused			$color5		$color5		$color5		$color13
-client.focused_inactive	$color8		$color8		$color8		$color8
-client.unfocused		$color12	$color12	$color12	$color12
+font pango:IBM Plex Mono Bold 10
+new_window pixel 3
+new_float pixel 3
+client.focused $color5 $color5 $color5 $color13
+client.focused_inactive $color8 $color8 $color8 $color8
+client.unfocused $color12 $color12 $color12 $color12
 
 # bar
 bar {
-	height					21
-	tray_padding			0 
-	strip_workspace_numbers	no
-	status_command			i3blocks -c ~/.config/i3/i3blocks/i3blocks.conf
-	position				top
-	mode					dock
+	height 21
+	tray_padding 0 
+	strip_workspace_numbers no
+	status_command i3blocks -c ~/.config/i3/i3blocks/i3blocks.conf
+	position top
+	mode dock
 	colors {
-		background			$background
-		statusline			$foreground
-		separator			$color0
-		focused_workspace	$background	$background	$color6
-		active_workspace	$background	$background	$color14
-		inactive_workspace	$background	$background	$color12
-		urgent_workspace	$background	$background	$color1
+		background $background
+		statusline $foreground
+		separator $color0
+		focused_workspace $background $background $color6
+		active_workspace $background $background $color14
+		inactive_workspace $background $background $color12
+		urgent_workspace $background $background $color1
 		}
 }
 
-
 # gaps
-gaps			inner 12
-gaps			outer 2
-smart_borders	no_gaps
-workspace		$w1 gaps inner 0
-workspace		$w1 gaps outer 0
+gaps inner 12
+gaps outer 2
+smart_borders no_gaps
+workspace $w1 gaps inner 0
+workspace $w1 gaps outer 0
 
 # shortcuts
-floating_modifier			$mod
-bindsym	$mod+q				kill
-bindsym	Mod1+Tab			workspace next
-bindsym	Mod1+Shift+Tab		workspace prev
-bindsym	$mod+BackSpace		workspace back_and_forth
-bindsym	$mod+h				focus left
-bindsym	$mod+j				focus down
-bindsym	$mod+k				focus up
-bindsym	$mod+l				focus right
-bindsym	$mod+Shift+h		move left
-bindsym	$mod+Shift+j		move down
-bindsym	$mod+Shift+k		move up
-bindsym	$mod+Shift+l		move right
-bindsym	$mod+c				split h
-bindsym	$mod+v				split v
-bindsym	$mod+Shift+r		restartconk
-bindsym	$mod+f				fullscreen toggle
-bindsym	$mod+s				layout stacking
-bindsym	$mod+w				layout tabbed
-bindsym	$mod+e				layout toggle split
-bindsym	$mod+Shift+space	floating toggle
-bindsym	$mod+space			focus mode_toggle
-bindsym	$mod+p				focus parent
-bindsym	$mod+z				focus child
-bindsym	$mod+Ctrl+Shift+e	exit
-bindsym $mod+Shift+c		reload
-bindsym	$mod+x				sticky toggle
-bindsym	$mod+1				workspace $w1
-bindsym	$mod+2				workspace $w2
-bindsym	$mod+3				workspace $w3
-bindsym	$mod+4				workspace $w4
-bindsym	$mod+5				workspace $w5
-bindsym	$mod+6				workspace $w6
-bindsym	$mod+7				workspace $w7
-bindsym	$mod+8				workspace $w8
-bindsym	$mod+9				workspace $w9
-bindsym	$mod+0				workspace $w10
-bindsym $mod+Shift+1		move container to workspace $w1
-bindsym $mod+Shift+2		move container to workspace $w2
-bindsym $mod+Shift+3		move container to workspace $w3
-bindsym $mod+Shift+4		move container to workspace $w4
-bindsym $mod+Shift+5		move container to workspace $w5
-bindsym $mod+Shift+6		move container to workspace $w6
-bindsym $mod+Shift+7		move container to workspace $w7
-bindsym $mod+Shift+8		move container to workspace $w8
-bindsym $mod+Shift+9		move container to workspace $w9
-bindsym $mod+Shift+0		move container to workspace $w10
+floating_modifier $mod
+bindsym	$mod+q kill
+bindsym	Mod1+Tab workspace next
+bindsym	Mod1+Shift+Tab workspace prev
+bindsym	$mod+BackSpace workspace back_and_forth
+bindsym	$mod+h focus left
+bindsym	$mod+j focus down
+bindsym	$mod+k focus up
+bindsym	$mod+l focus right
+bindsym	$mod+Shift+h move left
+bindsym	$mod+Shift+j move down
+bindsym	$mod+Shift+k move up
+bindsym	$mod+Shift+l move right
+bindsym	$mod+c split h
+bindsym	$mod+v split v
+bindsym	$mod+Shift+r restartconk
+bindsym	$mod+f fullscreen toggle
+bindsym	$mod+s layout stacking
+bindsym	$mod+w layout tabbed
+bindsym	$mod+e layout toggle split
+bindsym	$mod+Shift+space floating toggle
+bindsym	$mod+space focus mode_toggle
+bindsym	$mod+p focus parent
+bindsym	$mod+z focus child
+bindsym	$mod+Ctrl+Shift+e exit
+bindsym $mod+Shift+c reload
+bindsym	$mod+x sticky toggle
+bindsym	$mod+1 workspace $w1
+bindsym	$mod+2 workspace $w2
+bindsym	$mod+3 workspace $w3
+bindsym	$mod+4 workspace $w4
+bindsym	$mod+5 workspace $w5
+bindsym	$mod+6 workspace $w6
+bindsym	$mod+7 workspace $w7
+bindsym	$mod+8 workspace $w8
+bindsym	$mod+9 workspace $w9
+bindsym	$mod+0 workspace $w10
+bindsym $mod+Shift+1 move container to workspace $w1
+bindsym $mod+Shift+2 move container to workspace $w2
+bindsym $mod+Shift+3 move container to workspace $w3
+bindsym $mod+Shift+4 move container to workspace $w4
+bindsym $mod+Shift+5 move container to workspace $w5
+bindsym $mod+Shift+6 move container to workspace $w6
+bindsym $mod+Shift+7 move container to workspace $w7
+bindsym $mod+Shift+8 move container to workspace $w8
+bindsym $mod+Shift+9 move container to workspace $w9
+bindsym $mod+Shift+0 move container to workspace $w10
 
 # multimedia keys
-bindsym XF86AudioRaiseVolume	exec --no-startup-id amixer set Master 5%+ && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioLowerVolume	exec --no-startup-id amixer set Master 5%- && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioMuteVolume	exec --no-startup-id amixer set Master toggle && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+ && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%- && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMuteVolume exec --no-startup-id amixer set Master toggle && pkill -RTMIN+10 i3blocks
 
 # modes
-set	$mode_gaps			gaps: (i)nner (o)uter
-set	$mode_gaps_outer	outer gaps: w|s|d|0 (current), Shift + w|s|d|0 (global)
-set	$mode_gaps_inner	inner gaps: w|s|d|0 (current), Shift + w|s|d|0 (global)
+set $mode_gaps gaps: (i)nner (o)uter
+set $mode_gaps_outer outer gaps: w|s|d|0 (current), Shift + w|s|d|0 (global)
+set $mode_gaps_inner inner gaps: w|s|d|0 (current), Shift + w|s|d|0 (global)
 mode "$mode_gaps" {
-	bindsym o			mode "$mode_gaps_outer"
-	bindsym i			mode "$mode_gaps_inner"
-	bindsym Return		mode "default"
-	bindsym Escape		mode "default"
+	bindsym o mode "$mode_gaps_outer"
+	bindsym i mode "$mode_gaps_inner"
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 mode "$mode_gaps_inner" {
-	bindsym w 			gaps inner current plus 5
-	bindsym s 			gaps inner current minus 5
-	bindsym 0 			gaps inner current set 0
-	bindsym d 			gaps inner current set 3
-	bindsym Shift+w		gaps inner all plus 5
-	bindsym Shift+s		gaps inner all minus 5
-	bindsym Shift+0		gaps inner all set 0
-	bindsym Shift+d		gaps inner all set 3
-	bindsym Return		mode "default"
-	bindsym Escape		mode "default"
+	bindsym w gaps inner current plus 5
+	bindsym s gaps inner current minus 5
+	bindsym 0 gaps inner current set 0
+	bindsym d gaps inner current set 3
+	bindsym Shift+w gaps inner all plus 5
+	bindsym Shift+s gaps inner all minus 5
+	bindsym Shift+0 gaps inner all set 0
+	bindsym Shift+d gaps inner all set 3
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 mode "$mode_gaps_outer" {
-	bindsym w			gaps outer current plus 5
-	bindsym s			gaps outer current minus 5
-	bindsym 0			gaps outer current set 0
-	bindsym d			gaps outer current set 3
-	bindsym Shift+w		gaps outer all plus 5
-	bindsym Shift+s		gaps outer all minus 5
-	bindsym Shift+0		gaps outer all set 0
-	bindsym Shift+d		gaps outer all set 3
-	bindsym Return		mode "default"
-	bindsym Escape		mode "default"
+	bindsym w gaps outer current plus 5
+	bindsym s gaps outer current minus 5
+	bindsym 0 gaps outer current set 0
+	bindsym d gaps outer current set 3
+	bindsym Shift+w gaps outer all plus 5
+	bindsym Shift+s gaps outer all minus 5
+	bindsym Shift+0 gaps outer all set 0
+	bindsym Shift+d gaps outer all set 3
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 mode "passthrough" {
 	bindsym $mod+Escape mode "default"
 }
 mode "resize" {
-	bindsym h	resize shrink	width 2 px or 2 ppt
-	bindsym j	resize grow	height 2 px or 2 ppt
-	bindsym k	resize shrink	height 2 px or 2 ppt
-	bindsym l	resize grow	width 2 px or 2 ppt
-	bindsym Return		mode "default"
-	bindsym Escape		mode "default"
+	bindsym h resize shrink width 2 px or 2 ppt
+	bindsym j resize grow height 2 px or 2 ppt
+	bindsym k resize shrink height 2 px or 2 ppt
+	bindsym l resize grow width 2 px or 2 ppt
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
-bindsym	$mod+Escape		mode "passthrough"
-bindsym	$mod+r			mode "resize"
-bindsym	$mod+g			mode "$mode_gaps"
+bindsym	$mod+Escape mode "passthrough"
+bindsym	$mod+r mode "resize"
+bindsym	$mod+g mode "$mode_gaps"
 
 # vim:filetype=i3
