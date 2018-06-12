@@ -93,42 +93,42 @@ workspace $w1 gaps outer 0
 
 # shortcuts
 floating_modifier $mod
-bindsym	$mod+q kill
-bindsym	Mod1+Tab workspace next
-bindsym	Mod1+Shift+Tab workspace prev
-bindsym	$mod+BackSpace workspace back_and_forth
-bindsym	$mod+h focus left
-bindsym	$mod+j focus down
-bindsym	$mod+k focus up
-bindsym	$mod+l focus right
-bindsym	$mod+Shift+h move left
-bindsym	$mod+Shift+j move down
-bindsym	$mod+Shift+k move up
-bindsym	$mod+Shift+l move right
-bindsym	$mod+c split h
-bindsym	$mod+v split v
-bindsym	$mod+Shift+r restartconk
-bindsym	$mod+f fullscreen toggle
-bindsym	$mod+s layout stacking
-bindsym	$mod+w layout tabbed
-bindsym	$mod+e layout toggle split
-bindsym	$mod+Shift+space floating toggle
-bindsym	$mod+space focus mode_toggle
-bindsym	$mod+p focus parent
-bindsym	$mod+z focus child
-bindsym	$mod+Ctrl+Shift+e exit
+bindsym $mod+q kill
+bindsym Mod1+Tab workspace next
+bindsym Mod1+Shift+Tab workspace prev
+bindsym $mod+BackSpace workspace back_and_forth
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+c split h
+bindsym $mod+v split v
+bindsym $mod+Shift+r restartconk
+bindsym $mod+f fullscreen toggle
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+p focus parent
+bindsym $mod+z focus child
+bindsym $mod+Ctrl+Shift+e exit
 bindsym $mod+Shift+c reload
-bindsym	$mod+x sticky toggle
-bindsym	$mod+1 workspace $w1
-bindsym	$mod+2 workspace $w2
-bindsym	$mod+3 workspace $w3
-bindsym	$mod+4 workspace $w4
-bindsym	$mod+5 workspace $w5
-bindsym	$mod+6 workspace $w6
-bindsym	$mod+7 workspace $w7
-bindsym	$mod+8 workspace $w8
-bindsym	$mod+9 workspace $w9
-bindsym	$mod+0 workspace $w10
+bindsym $mod+x sticky toggle
+bindsym $mod+1 workspace $w1
+bindsym $mod+2 workspace $w2
+bindsym $mod+3 workspace $w3
+bindsym $mod+4 workspace $w4
+bindsym $mod+5 workspace $w5
+bindsym $mod+6 workspace $w6
+bindsym $mod+7 workspace $w7
+bindsym $mod+8 workspace $w8
+bindsym $mod+9 workspace $w9
+bindsym $mod+0 workspace $w10
 bindsym $mod+Shift+1 move container to workspace $w1
 bindsym $mod+Shift+2 move container to workspace $w2
 bindsym $mod+Shift+3 move container to workspace $w3
@@ -190,8 +190,8 @@ mode "resize" {
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 }
-bindsym	$mod+Escape mode "passthrough"
-bindsym	$mod+r mode "resize"
-bindsym	$mod+g mode "$mode_gaps"
+bindsym $mod+Escape mode "passthrough"
+bindsym $mod+r mode "resize"
+bindsym $mod+g mode "$mode_gaps"
 
 # vim:filetype=i3
