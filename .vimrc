@@ -32,6 +32,7 @@ set history=64
 set nocompatible
 set backspace=indent,eol,start
 set ruler
+set nowrap
 set hlsearch
 set ignorecase
 set smartcase
@@ -42,17 +43,20 @@ set listchars=tab:▸\ ,eol:¬
 set laststatus=2
 set noshowmode
 set colorcolumn=80
-highlight ColorColumn ctermbg=black
-highlight NonText ctermfg=black
-highlight SpecialKey ctermfg=black
-highlight LineNr ctermfg=blue
 call vundle#begin()
     Plugin 'itchyny/lightline.vim'
  	Plugin 'PotatoesMaster/i3-vim-syntax'
     Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     Plugin 'scrooloose/nerdtree'
+	Plugin 'fatih/molokai'
+	Plugin 'stevearc/vim-arduino'
 call vundle#end()
 
+let g:arduino_dir = '/usr/share/arduino/'
 
+colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
+let g:lightline = {'colorscheme': 'molokai'}
 
 

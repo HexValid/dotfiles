@@ -1,55 +1,52 @@
+# hexvalid's i3-gaps config - revision 38
+
 # colors from .Xresources
-set_from_resource $foreground	.foreground
-set_from_resource $background	.background
-set_from_resource $color0		.color0
-set_from_resource $color1		.color1
-set_from_resource $color2		.color2
-set_from_resource $color3		.color3
-set_from_resource $color4		.color4
-set_from_resource $color5		.color5
-set_from_resource $color6		.color6
-set_from_resource $color7		.color7
-set_from_resource $color8		.color8
-set_from_resource $color9		.color9
-set_from_resource $color10		.color10
-set_from_resource $color11		.color11
-set_from_resource $color12		.color12
-set_from_resource $color13		.color13
-set_from_resource $color14		.color14
-set_from_resource $color15		.color15
+set_from_resource $foreground .foreground
+set_from_resource $background .background
+set_from_resource $color0 .color0
+set_from_resource $color1 .color1
+set_from_resource $color2 .color2
+set_from_resource $color3 .color3
+set_from_resource $color4 .color4
+set_from_resource $color5 .color5
+set_from_resource $color6 .color6
+set_from_resource $color7 .color7
+set_from_resource $color8 .color8
+set_from_resource $color9 .color9
+set_from_resource $color10 .color10
+set_from_resource $color11 .color11
+set_from_resource $color12 .color12
+set_from_resource $color13 .color13
+set_from_resource $color14 .color14
+set_from_resource $color15 .color15
 
 # workspaces
-set	$w1		1
-set	$w2		2
-set	$w3		3
-set	$w4		4
-set	$w5		5
-set	$w6		6
-set	$w7		7
-set	$w8		8
-set	$w9		9
-set	$w10	10
+set	$w1 1
+set	$w2 2
+set	$w3 3
+set	$w4 4
+set	$w5 5
+set	$w6 6
+set	$w7 7
+set	$w8 8
+set	$w9 9
+set	$w10 10
 
 # mod keybinder
-set	$mod	Mod4
+set	$mod Mod4
 
 # launcher keybindings
-bindsym		$mod+Mod1+1		exec --no-startup-id icecat 
-bindsym		$mod+Mod1+2		exec --no-startup-id urxvtc -e ranger 
-bindsym		$mod+Mod1+3		exec --no-startup-id telegram-desktop
-bindsym 	$mod+t			exec --no-startup-id urxvtc
-bindsym 	$mod+Shift+t	exec --no-startup-id urxvtc -name freeterm -geometry 90x18
-bindsym 	$mod+d			exec --no-startup-id dmenu_run
-
-# workspace assings
-assign		[class="Inox"]	$w1
+bindsym $mod+Mod1+1 exec --no-startup-id icecat 
+bindsym $mod+Mod1+2 exec --no-startup-id urxvtc -e ranger 
+bindsym $mod+Mod1+3 exec --no-startup-id telegram-desktop
+bindsym $mod+t exec --no-startup-id urxvtc
+bindsym $mod+d exec --no-startup-id dmenu_run
 
 # special app configs
-for_window	[class="URxvt" instance="freeterm$"]	floating enable, border pixel 3
-for_window	[window_role="pop-up"]					floating enable
-for_window	[class="^Telegram" title="Telegram"]	floating enable,border pixel 1,move absolute position 1056 px 20 px
-for_window	[class="^Telegram" title="Telegram"] 	resize shrink height 2000px, resize shrink width 2000px
-for_window	[class="^fceux"] floating enable, border pixel 2,resize grow height 2000px, resize shrink width 2000px
+for_window [window_role="pop-up"] floating enable
+for_window [title="Telegram"] floating enable,border pixel 1
+for_window [title="Telegram"] move absolute position 1056px 20px
+for_window [title="Telegram"] resize shrink height 2000px width 2000px
 
 # startup apps
 exec --no-startup-id feh --bg-center ~/pictures/wallpapers/wall.png
@@ -187,10 +184,10 @@ mode "passthrough" {
 	bindsym $mod+Escape mode "default"
 }
 mode "resize" {
-	bindsym Left		resize shrink	width 2 px or 2 ppt
-	bindsym Down		resize grow	height 2 px or 2 ppt
-	bindsym Up			resize shrink	height 2 px or 2 ppt
-	bindsym Right		resize grow	width 2 px or 2 ppt
+	bindsym h	resize shrink	width 2 px or 2 ppt
+	bindsym j	resize grow	height 2 px or 2 ppt
+	bindsym k	resize shrink	height 2 px or 2 ppt
+	bindsym l	resize grow	width 2 px or 2 ppt
 	bindsym Return		mode "default"
 	bindsym Escape		mode "default"
 }
