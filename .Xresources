@@ -5,24 +5,25 @@ Xft.dpi: 120
 !Xft.hinting: 1
 !Xft.antialias: 1
 !Xft.rgba: rgb
-URxvt.font:				xft:IBM Plex Mono Medium:size=11, xft:Symbola:size=11
-URxvt.boldFont:			xft:IBM Plex Mono:Bold:size=11
-URxvt.allow_bold:		true
-URxvt.internalBorder:	4
-URxvt.letterSpace:		0
-URxvt.cursorBlink:		true
-URxvt.scrollBar:		false
-URxvt.saveLines:		1024
-URxvt.iso14755:			False
-URxvt.iso14755_52:		false
-URxvt.perl-ext-common:		resize-font 
-URxvt.keysym.C-k:		resize-font:smaller
-URxvt.keysym.C-j:		resize-font:bigger
+URxvt.font: xft:IBM Plex Mono Medium:size=11, xft:Symbola:size=11
+URxvt.boldFont: xft:IBM Plex Mono:Bold:size=11
+URxvt.allow_bold: true
+URxvt.internalBorder: 4
+URxvt.letterSpace: 0
+URxvt.cursorBlink: true
+URxvt.scrollBar: false
+URxvt.saveLines: 1024
+URxvt.iso14755: False
+URxvt.iso14755_52: false
+URxvt.perl-ext-common: resize-font 
+URxvt.keysym.C-k: resize-font:smaller
+URxvt.keysym.C-j: resize-font:bigger
+URxvt.cursorUnderline: 1
 !urxvt*depth: 32
 !urxvt*background: rgba:0000/0000/0200/c800
 
-*foreground:   #d0d0d0
-*background:   #121212
+*foreground: #d0d0d0
+*background: #121212
 *color0:       #465457
 *color8:       #808080
 *color1:       #d7005f

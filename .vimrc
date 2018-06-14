@@ -40,7 +40,7 @@ set hlsearch
 set ignorecase
 set smartcase
 set number
-set relativenumber
+set norelativenumber
 set nolist
 set listchars=tab:▸\ ,eol:¬
 set laststatus=2

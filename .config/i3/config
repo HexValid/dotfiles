@@ -49,10 +49,10 @@ for_window [title="Telegram"] move absolute position 1056px 20px
 for_window [title="Telegram"] resize shrink height 2000px width 2000px
 
 # startup apps
+exec --no-startup-id ~/scripts/input.sh
 exec --no-startup-id feh --bg-center ~/pictures/wallpapers/wall.png
 exec --no-startup-id xrandr --dpi 96
 exec --no-startup-id xrdb .Xresources
-exec --no-startup-id setxkbmap -layout tr -option caps:super && xcape -e 'Super_L=Escape' && xmodmap -e 'keycode 135 = Super_R' &&  xmodmap -e 'keycode 133 = NoSymbol'
 exec --no-startup-id urxvtd -q -o -f
 exec --no-startup-id sleep 1 && xgamma -gamma 0.95
 exec --no-startup-id unclutter

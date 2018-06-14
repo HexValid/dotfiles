@@ -3,7 +3,8 @@
 !.vimrc
 !.Xresources
 !.xinitrc
-!./config/i3/*
+!.config/i3/*
 !.bash_profile
 !.asoundrc
 !.inputrc
+!scripts/*
