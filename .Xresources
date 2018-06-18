@@ -5,7 +5,7 @@ Xft.dpi: 120
 !Xft.hinting: 1
 !Xft.antialias: 1
 !Xft.rgba: rgb
-URxvt.font: xft:IBM Plex Mono Medium:size=11, xft:Symbola:size=11
+URxvt.font: xft:IBM Plex Mono:Medium:size=11, xft:Symbola:size=11
 URxvt.boldFont: xft:IBM Plex Mono:Bold:size=11
 URxvt.allow_bold: true
 URxvt.internalBorder: 4
@@ -21,23 +21,34 @@ URxvt.keysym.C-j: resize-font:bigger
 URxvt.cursorUnderline: 1
 !urxvt*depth: 32
 !urxvt*background: rgba:0000/0000/0200/c800
+! molokai colors
+*background: #121112
+*foreground: #D0CFD0
 
-*foreground: #d0d0d0
-*background: #121212
-*color0:       #465457
-*color8:       #808080
-*color1:       #d7005f
-*color9:       #f92672
-*color2:       #87ff00
-*color10:      #a6e22e
-*color3:       #ff8700
-*color11:      #fd971f
-*color4:       #acac85
-*color12:      #c4be89
-*color5:       #af5fff
-*color13:      #ae81ff
-*color6:       #5fd7ff
-*color14:      #84e0f2
-*color7:       #f8f8f8
-*color15:		#ffffff
+! black
+*color0:#121112
+*color8:#6C6C6C
+! red
+*color1:#D7005F
+*color9:#D74083
+! green
+*color2:#87FF00
+*color10:#93FF19
+! yellow
+*color3:#FF8700
+*color11:#FF9926
+! blue
+*color4:#005F87
+*color12:#387BAB
+! magenta
+*color5:#AF5FFF
+*color13:#B973FF
+! cyan
+*color6:#81C1C1
+*color14:#5FD7FF
+! white
+*color7:#AFAF87
+*color15:#D0D0D0
+! underline when default
+*colorUL: #5FD7FF
 

@@ -28,6 +28,7 @@ noremap ı <Insert>
 syntax on
 filetype on
 filetype plugin on
+set noswapfile
 set noerrorbells
 set novisualbell
 set noexpandtab tabstop=4 shiftwidth=4
@@ -56,7 +57,30 @@ call vundle#begin()
 	Plugin 'fatih/molokai'
 	Plugin 'stevearc/vim-arduino'
 	Plugin 'SirVer/ultisnips'
+	Plugin 'Shougo/neocomplete.vim'
 call vundle#end()
+"neocomplete
+"let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 2
+inoremap <expr><S-z>     neocomplete#undo_completion()
+inoremap <expr><S-b>     neocomplete#complete_common_string()
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+
+
+"ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<S-b>"
+let g:UltiSnipsJumpBackwardTrigger="<S-z>"
 
 "vim-go
 let g:go_fmt_autosave = 0

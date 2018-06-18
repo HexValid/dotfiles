@@ -1,4 +1,4 @@
-# hexvalid's i3-gaps config - revision 39
+# hexvalid's i3-gaps config - revision 40
 
 # colors from .Xresources
 set_from_resource $foreground .foreground
@@ -36,21 +36,32 @@ set	$w10 10
 set	$mod Mod4
 
 # launcher keybindings
-bindsym $mod+Mod1+1 exec --no-startup-id icecat 
+bindsym $mod+Mod1+1 exec --no-startup-id iceweasel
 bindsym $mod+Mod1+2 exec --no-startup-id urxvtc -e ranger
 bindsym $mod+Mod1+3 exec --no-startup-id telegram-desktop
 bindsym $mod+t exec --no-startup-id urxvtc
+bindsym $mod+Mod1+t exec --no-startup-id urxvtc -name pop
+bindsym $mod+Mod1+4 exec --no-startup-id urxvtc -name mps -e mpsyt
 bindsym $mod+d exec --no-startup-id dmenu_run
 
 # special app configs
 for_window [window_role="pop-up"] floating enable
 for_window [title="Telegram"] floating enable,border pixel 1
-for_window [title="Telegram"] move absolute position 1056px 20px
-for_window [title="Telegram"] resize shrink height 2000px width 2000px
+for_window [title="Telegram"] move absolute position 960 21
+for_window [title="Telegram"] resize set 480 517 
+for_window [class="mpv" instance="mpsyt"] floating enable,border pixel 1
+for_window [class="mpv" instance="mpsyt"] resize set 480 360
+for_window [class="mpv" instance="mpsyt"] move absolute position 960 540
+for_window [class="URxvt" instance="pop"] floating enable,border pixel 1
+for_window [class="URxvt" instance="pop"] resize set 957 879
+for_window [class="URxvt" instance="pop"] move absolute position 1 21
+for_window [class="URxvt" instance="mps"] floating enable,border pixel 1 
+for_window [class="URxvt" instance="mps"] resize set 480 360
+for_window [class="URxvt" instance="mps"] move absolute position 960 540
 
 # startup apps
 exec --no-startup-id ~/scripts/input.sh
-exec --no-startup-id feh --bg-center ~/pictures/wallpapers/wall.png
+exec --no-startup-id feh --bg-center ~/pictures/wallpapers/endofevangelion.jpg
 exec --no-startup-id xrandr --dpi 96
 exec --no-startup-id xrdb .Xresources
 exec --no-startup-id urxvtd -q -o -f
@@ -58,7 +69,7 @@ exec --no-startup-id sleep 1 && xgamma -gamma 0.95
 exec --no-startup-id unclutter
 
 # design
-font pango:IBM Plex Mono Bold 10
+font pango:IBM Plex Mono Bold 10 
 new_window pixel 3
 new_float pixel 3
 client.focused $color5 $color5 $color5 $color13

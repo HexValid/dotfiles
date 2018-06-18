@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "<span foreground='#44b5b1'>VOL</span><span foreground='#61778d'>:</span>$(awk -F'[][%]' '/dB/ { print $2 }' <(amixer sget Master))"
+echo $(awk -F'[][%]' '/dB/ { print $2 }' <(amixer sget Master))
