@@ -1,4 +1,4 @@
-# hexvalid's i3-gaps config - revision 40
+# hexvalid's i3-gaps config - revision 41
 
 # colors from .Xresources
 set_from_resource $foreground .foreground
@@ -61,24 +61,25 @@ for_window [class="URxvt" instance="mps"] move absolute position 960 540
 
 # startup apps
 exec --no-startup-id ~/scripts/input.sh
-exec --no-startup-id feh --bg-center ~/pictures/wallpapers/endofevangelion.jpg
+exec --no-startup-id feh --bg-center --randomize ~/pictures/wallpapers/*
 exec --no-startup-id xrandr --dpi 96
 exec --no-startup-id xrdb .Xresources
 exec --no-startup-id urxvtd -q -o -f
 exec --no-startup-id sleep 1 && xgamma -gamma 0.95
 exec --no-startup-id unclutter
+exec --no-startup-id compton
 
 # design
-font pango:IBM Plex Mono Bold 10 
-new_window pixel 3
+font pango:Gohu GohuFont Bold 10 
+new_window pixel 2
 new_float pixel 3
-client.focused $color5 $color5 $color5 $color13
-client.focused_inactive $color8 $color8 $color8 $color8
-client.unfocused $color12 $color12 $color12 $color12
+client.focused $color4 $color4 $color4 $color12
+client.focused_inactive $color14 $color14 $color14 $color14
+client.unfocused $color8 $color8 $color8 $color8
 
 # bar
 bar {
-	height 21
+	height 16
 	tray_padding 0 
 	strip_workspace_numbers no
 	status_command i3blocks -c ~/.config/i3/i3blocks/i3blocks.conf

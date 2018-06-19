@@ -1,54 +1,42 @@
 Xft.dpi: 120
-!Xft.autohint: 0
-!Xft.lcdfilter:  lcddefault
-!Xft.hintstyle:  hintfull
-!Xft.hinting: 1
-!Xft.antialias: 1
-!Xft.rgba: rgb
-URxvt.font: xft:IBM Plex Mono:Medium:size=11, xft:Symbola:size=11
-URxvt.boldFont: xft:IBM Plex Mono:Bold:size=11
+URxvt.font: -gohu-gohufont-medium-r-normal--14-100-100-100-c-80-iso10646-1
+URxvt.boldFont: -gohu-gohufont-bold-r-normal--14-100-100-100-c-80-iso10646-1
 URxvt.allow_bold: true
 URxvt.internalBorder: 4
 URxvt.letterSpace: 0
 URxvt.cursorBlink: true
 URxvt.scrollBar: false
-URxvt.saveLines: 1024
-URxvt.iso14755: False
+URxvt.saveLines: 0
+URxvt.iso14755: false
 URxvt.iso14755_52: false
-URxvt.perl-ext-common: resize-font 
-URxvt.keysym.C-k: resize-font:smaller
-URxvt.keysym.C-j: resize-font:bigger
+URxvt.perl-ext:
+URxvt.perl-ext-common:
 URxvt.cursorUnderline: 1
-!urxvt*depth: 32
-!urxvt*background: rgba:0000/0000/0200/c800
-! molokai colors
+URxvt.scrollTtyKeypress:  true
+URxvt.scrollTtyOutput:  false
+URxvt.scrollWithBuffer:  false
+URxvt.skipScroll:  true
+URxvt.geometry: 174x59
+URxvt.depth: 32
+URxvt.background: [85]#121212
+
 *background: #121112
 *foreground: #D0CFD0
-
-! black
 *color0:#121112
 *color8:#6C6C6C
-! red
 *color1:#D7005F
 *color9:#D74083
-! green
 *color2:#87FF00
 *color10:#93FF19
-! yellow
 *color3:#FF8700
 *color11:#FF9926
-! blue
 *color4:#005F87
 *color12:#387BAB
-! magenta
 *color5:#AF5FFF
 *color13:#B973FF
-! cyan
 *color6:#81C1C1
 *color14:#5FD7FF
-! white
 *color7:#AFAF87
 *color15:#D0D0D0
-! underline when default
 *colorUL: #5FD7FF
 

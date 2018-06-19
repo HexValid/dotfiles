@@ -64,8 +64,8 @@ call vundle#end()
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 2
-inoremap <expr><S-z>     neocomplete#undo_completion()
-inoremap <expr><S-b>     neocomplete#complete_common_string()
+"inoremap <expr><S-z>     neocomplete#undo_completion()
+"inoremap <expr><S-b>     neocomplete#complete_common_string()
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -79,8 +79,8 @@ endif
 
 "ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<S-b>"
-let g:UltiSnipsJumpBackwardTrigger="<S-z>"
+"let g:UltiSnipsJumpForwardTrigger="<S-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<S-z>"
 
 "vim-go
 let g:go_fmt_autosave = 0
@@ -96,6 +96,8 @@ let g:arduino_dir = '/usr/share/arduino/'
 
 "theme
 colorscheme molokai
+hi Normal ctermbg=none
 let g:molokai_original = 1
 let g:rehash256 = 1
+
 
