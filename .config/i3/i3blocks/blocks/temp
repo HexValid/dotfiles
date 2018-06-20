@@ -1,0 +1,8 @@
+#!/bin/bash
+temp=$(expr $(cat /sys/class/thermal/thermal_zone0/temp) / 1000)
+if [[ $temp -gt 72 ]]; then
+	temp=$(~/scripts/pp 1 $temp)
+elif [[ $temp -gt 60 ]]; then
+	temp=$(~/scripts/pp 11 $temp)
+fi
+echo $(~/scripts/pp 12 temp)$(~/scripts/pp 8 :)$temp

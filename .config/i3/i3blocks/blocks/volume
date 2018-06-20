@@ -1,2 +1,8 @@
 #!/bin/bash
-echo $(awk -F'[][%]' '/dB/ { print $2 }' <(amixer sget Master))
+output=$(amixer sget Master -M)
+level=$(awk -F'[][%]' '/dB/ { print $2 }' <(echo $output))
+levelSW=$(awk -F'[][%]' '{ print $2 }' <(amixer sget Software -M) | egrep -m 1 .)
+if [[ $output = *"off"* ]]; then
+	level=$(~/scripts/pp 1 $level)
+fi
+echo $(~/scripts/pp 12 vol)$(~/scripts/pp 8 :)$level$(~/scripts/pp 8 .)$(~/scripts/pp 7 $levelSW)

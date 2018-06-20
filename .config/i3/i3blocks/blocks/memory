@@ -1,0 +1,8 @@
+#!/bin/bash
+memory=$(free -m | awk 'NR==2{printf "%s", $3}')
+if [[ $memory -gt 6144 ]]; then
+	memory=$(~/scripts/pp 1 $memory)
+elif [[ $memory -gt 4096 ]]; then
+	memory=$(~/scripts/pp 3 $memory)
+fi
+echo $(~/scripts/pp 12 mem)$(~/scripts/pp 8 :)$memory

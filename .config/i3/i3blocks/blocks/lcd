@@ -1,0 +1,5 @@
+#!/bin/bash
+sleep 0.2
+bright=$(</sys/class/backlight/acpi_video0/brightness)
+perc=$(( $bright * 100 / 15 ))
+echo $(~/scripts/pp 12 lcd)$(~/scripts/pp 8 :)$perc

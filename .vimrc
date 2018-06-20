@@ -1,9 +1,14 @@
 "keys
-let mapleader = "-"
+let mapleader = "\<space>"
 nnoremap <leader>w <C-w>
 nmap <leader>f :NERDTreeToggle<CR>
 nmap <leader>l :set list!<CR>
 nmap <leader>n :set relativenumber!<CR>
+
+"toggle colorcolumn
+command! ToggleCC :let &cc = &cc == '' ? '80' : ''
+nmap <leader>c :let &cc = &cc == '' ? '80' : ''<CR>
+
 autocmd FileType go nmap <leader>gb :GoBuild<CR>
 autocmd FileType go nmap <leader>gr :GoRun<CR>
 autocmd FileType go nmap <leader>gi :GoImports<CR>
@@ -28,7 +33,9 @@ noremap ı <Insert>
 syntax on
 filetype on
 filetype plugin on
-set noswapfile
+set encoding=utf-8
+set autoindent
+set smartindent
 set noerrorbells
 set novisualbell
 set noexpandtab tabstop=4 shiftwidth=4
@@ -43,10 +50,9 @@ set smartcase
 set number
 set norelativenumber
 set nolist
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:→\ ,eol:¬
 set laststatus=2
 set noshowmode
-set colorcolumn=80
 
 "plugins
 call vundle#begin()
@@ -59,6 +65,13 @@ call vundle#begin()
 	Plugin 'SirVer/ultisnips'
 	Plugin 'Shougo/neocomplete.vim'
 call vundle#end()
+
+"nerdtree
+let NERDTreeMinimalUI = 1
+let g:NERDTreeDirArrowExpandable="→"
+let g:NERDTreeDirArrowCollapsible="↓"
+
+
 "neocomplete
 "let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1

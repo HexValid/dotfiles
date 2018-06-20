@@ -1,2 +1,2 @@
 #!/bin/bash
-date "+%d.%m.%Y %H:%M"
+echo $(date "+$(~/scripts/pp 12 %a)$(~/scripts/pp 8 :)%d$(~/scripts/pp 8 .)%m$(~/scripts/pp 8 .)%y %H$(~/scripts/pp 8 :)%M") | tr '[:upper:]' '[:lower:]'

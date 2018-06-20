@@ -1,4 +1,4 @@
-# hexvalid's i3-gaps config - revision 41
+# hexvalid's i3-gaps config - revision 42
 
 # colors from .Xresources
 set_from_resource $foreground .foreground
@@ -47,14 +47,11 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # special app configs
 for_window [window_role="pop-up"] floating enable
 for_window [title="Telegram"] floating enable,border pixel 1
-for_window [title="Telegram"] move absolute position 960 21
-for_window [title="Telegram"] resize set 480 517 
+for_window [title="Telegram"] move absolute position 1056 16
+for_window [title="Telegram"] resize set 380 480 
 for_window [class="mpv" instance="mpsyt"] floating enable,border pixel 1
 for_window [class="mpv" instance="mpsyt"] resize set 480 360
 for_window [class="mpv" instance="mpsyt"] move absolute position 960 540
-for_window [class="URxvt" instance="pop"] floating enable,border pixel 1
-for_window [class="URxvt" instance="pop"] resize set 957 879
-for_window [class="URxvt" instance="pop"] move absolute position 1 21
 for_window [class="URxvt" instance="mps"] floating enable,border pixel 1 
 for_window [class="URxvt" instance="mps"] resize set 480 360
 for_window [class="URxvt" instance="mps"] move absolute position 960 540
@@ -66,7 +63,7 @@ exec --no-startup-id xrandr --dpi 96
 exec --no-startup-id xrdb .Xresources
 exec --no-startup-id urxvtd -q -o -f
 exec --no-startup-id sleep 1 && xgamma -gamma 0.95
-exec --no-startup-id unclutter
+exec --no-startup-id unclutter -idle 1
 exec --no-startup-id compton
 
 # design
@@ -86,12 +83,11 @@ bar {
 	position top
 	mode dock
 	colors {
-		background $background
-		statusline $foreground
+		background $background statusline $foreground
 		separator $color0
-		focused_workspace $background $background $color6
-		active_workspace $background $background $color14
-		inactive_workspace $background $background $color12
+		focused_workspace $background $background $color12
+		active_workspace $background $background $color4
+		inactive_workspace $background $background $color8
 		urgent_workspace $background $background $color1
 		}
 }
@@ -108,7 +104,7 @@ floating_modifier $mod
 bindsym $mod+q kill
 bindsym Mod1+Tab workspace next
 bindsym Mod1+Shift+Tab workspace prev
-bindsym $mod+BackSpace workspace back_and_forth
+bindsym $mod+space workspace back_and_forth
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -117,15 +113,14 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-bindsym $mod+c split h
-bindsym $mod+v split v
+bindsym $mod+v split toggle
 bindsym $mod+Shift+r restartconk
 bindsym $mod+f fullscreen toggle
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
+bindsym $mod+o focus mode_toggle
 bindsym $mod+p focus parent
 bindsym $mod+z focus child
 bindsym $mod+Ctrl+Shift+e exit
@@ -153,9 +148,13 @@ bindsym $mod+Shift+9 move container to workspace $w9
 bindsym $mod+Shift+0 move container to workspace $w10
 
 # multimedia keys
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+ && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%- && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -M set Master 5%+ && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -M set Master 5%- && pkill -RTMIN+10 i3blocks
+bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id amixer -M set Software 1+ && pkill -RTMIN+10 i3blocks
+bindsym Shift+XF86AudioLowerVolume exec --no-startup-id amixer -M set Software 1- && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMuteVolume exec --no-startup-id amixer set Master toggle && pkill -RTMIN+10 i3blocks
+bindsym XF86MonBrightnessUp exec --no-startup-id pkill -RTMIN+11 i3blocks
+bindsym XF86MonBrightnessDown exec --no-startup-id pkill -RTMIN+11 i3blocks
 
 # modes
 set $mode_gaps gaps: (i)nner (o)uter
@@ -195,10 +194,10 @@ mode "passthrough" {
 	bindsym $mod+Escape mode "default"
 }
 mode "resize" {
-	bindsym h resize shrink width 2 px or 2 ppt
-	bindsym j resize grow height 2 px or 2 ppt
-	bindsym k resize shrink height 2 px or 2 ppt
-	bindsym l resize grow width 2 px or 2 ppt
+	bindsym h resize shrink width 1 px or 1 ppt
+	bindsym j resize grow height 1 px or 1 ppt
+	bindsym k resize shrink height 1 px or 1 ppt
+	bindsym l resize grow width 1 px or 1 ppt
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 }
