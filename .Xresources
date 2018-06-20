@@ -16,7 +16,7 @@ URxvt.scrollTtyKeypress:  true
 URxvt.scrollTtyOutput:  false
 URxvt.scrollWithBuffer:  false
 URxvt.skipScroll:  true
-URxvt.geometry: 174x59
+!URxvt.geometry: 174x59
 URxvt.depth: 32
 URxvt.background: [85]#121212
 

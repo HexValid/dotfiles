@@ -65,13 +65,14 @@ exec --no-startup-id urxvtd -q -o -f
 exec --no-startup-id sleep 1 && xgamma -gamma 0.95
 exec --no-startup-id unclutter -idle 1
 exec --no-startup-id compton
+exec --no-startup-id dunst
 
 # design
 font pango:Gohu GohuFont Bold 10 
 new_window pixel 2
 new_float pixel 3
 client.focused $color4 $color4 $color4 $color12
-client.focused_inactive $color14 $color14 $color14 $color14
+client.focused_inactive $color7 $color7 $color7 $color7
 client.unfocused $color8 $color8 $color8 $color8
 
 # bar
