@@ -60,34 +60,28 @@ call vundle#begin()
 	Plugin 'PotatoesMaster/i3-vim-syntax'
 	Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 	Plugin 'scrooloose/nerdtree'
-	Plugin 'fatih/molokai'
 	Plugin 'stevearc/vim-arduino'
 	Plugin 'SirVer/ultisnips'
 	Plugin 'Shougo/neocomplete.vim'
+	Plugin 'morhetz/gruvbox'
 call vundle#end()
 
 "nerdtree
 let NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrowExpandable="→"
 let g:NERDTreeDirArrowCollapsible="↓"
-
+let g:NERDTreeShowBookmarks = 1
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeQuitOnOpen = 1
 
 "neocomplete
-"let g:acp_enableAtStartup = 0
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_auto_select = 1
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#enable_auto_delimiter=1
 let g:neocomplete#sources#syntax#min_keyword_length = 2
-"inoremap <expr><S-z>     neocomplete#undo_completion()
-"inoremap <expr><S-b>     neocomplete#complete_common_string()
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
+inoremap <expr><leader><tab>     neocomplete#complete_common_string()
 
 
 "ultisnips
@@ -108,9 +102,6 @@ let g:go_highlight_build_constraints = 1
 let g:arduino_dir = '/usr/share/arduino/'
 
 "theme
-colorscheme molokai
-hi Normal ctermbg=none
-let g:molokai_original = 1
-let g:rehash256 = 1
-
-
+colorscheme gruvbox
+let g:lightline = {}
+let g:lightline.colorscheme = 'gruvbox'

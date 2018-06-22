@@ -1,42 +1,91 @@
 Xft.dpi: 120
-URxvt.font: -gohu-gohufont-medium-r-normal--14-100-100-100-c-80-iso10646-1
-URxvt.boldFont: -gohu-gohufont-bold-r-normal--14-100-100-100-c-80-iso10646-1
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+URxvt.font: xft:Fira Mono:size=10,style=medium
+URxvt.boldFont: xft:Fira Mono:size=10,style=bold
+URxvt.italicFont: xft:Fira Mono:size=10,style=bold
+URxvt.boldItalicFont: xft:Fira Mono:size=10,style=bold
 URxvt.allow_bold: true
 URxvt.internalBorder: 4
-URxvt.letterSpace: 0
+URxvt.letterSpace: -1
 URxvt.cursorBlink: true
 URxvt.scrollBar: false
-URxvt.saveLines: 0
+URxvt.saveLines: 118
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 URxvt.perl-ext:
 URxvt.perl-ext-common:
 URxvt.cursorUnderline: 1
-URxvt.scrollTtyKeypress:  true
-URxvt.scrollTtyOutput:  false
-URxvt.scrollWithBuffer:  false
-URxvt.skipScroll:  true
-!URxvt.geometry: 174x59
-URxvt.depth: 32
-URxvt.background: [85]#121212
+URxvt.scrollTtyKeypress: true
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: false
+URxvt.skipScroll: trueURxvt.color24:  #076678
+URxvt.color66:  #427b58
+URxvt.color88:  #9d0006
+URxvt.color96:  #8f3f71
+URxvt.color100: #79740e
+URxvt.color108: #8ec07c
+URxvt.color109: #83a598
+URxvt.color130: #af3a03
+URxvt.color136: #b57614
+URxvt.color142: #b8bb26
+URxvt.color167: #fb4934
+URxvt.color175: #d3869b
+URxvt.color208: #fe8019
+URxvt.color214: #fabd2f
+URxvt.color223: #ebdbb2
+URxvt.color228: #f2e5bc
+URxvt.color229: #fbf1c7
+URxvt.color230: #f9f5d7
+URxvt.color234: #1d2021
+URxvt.color235: #282828
+URxvt.color236: #32302f
+URxvt.color237: #3c3836
+URxvt.color239: #504945
+URxvt.color241: #665c54
+URxvt.color243: #7c6f64
+URxvt.color244: #928374
+URxvt.color245: #928374
+URxvt.color246: #a89984
+URxvt.color248: #bdae93
+URxvt.color250: #d5c4a1
 
-*background: #121112
-*foreground: #D0CFD0
-*color0:#121112
-*color8:#6C6C6C
-*color1:#D7005F
-*color9:#D74083
-*color2:#87FF00
-*color10:#93FF19
-*color3:#FF8700
-*color11:#FF9926
-*color4:#005F87
-*color12:#387BAB
-*color5:#AF5FFF
-*color13:#B973FF
-*color6:#81C1C1
-*color14:#5FD7FF
-*color7:#AFAF87
-*color15:#D0D0D0
-*colorUL: #5FD7FF
+! -----------------------------------------------------------------------------
+! File: gruvbox-dark.xresources
+! Description: Retro groove colorscheme generalized
+! Author: morhetz <morhetz@gmail.com>
+! Source: https://github.com/morhetz/gruvbox-generalized
+! Last Modified: 6 Sep 2014
+! -----------------------------------------------------------------------------
 
+! hard contrast: *background: #1d2021
+*background: #282828
+! soft contrast: *background: #32302f
+*foreground: #ebdbb2
+! Black + DarkGrey
+*color0:  #282828
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2

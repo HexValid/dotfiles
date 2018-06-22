@@ -9,23 +9,6 @@ set completion-ignore-case on
 set completion-prefix-display-length 2
 #set show-mode-in-prompt on
 
-$if mode=emacs
-"\e[1~": beginning-of-line
-"\e[4~": end-of-line
-"\e[5~": beginning-of-history
-"\e[6~": end-of-history
-"\e[7~": beginning-of-line
-"\e[3~": delete-char
-"\e[2~": quoted-insert
-"\e[5C": forward-word
-"\e[5D": backward-word
-"\e\e[C": forward-word
-"\e\e[D": backward-word
-"\e[1;5C": forward-word
-"\e[1;5D": backward-word
-
-$endif
-
 $if mode=vi
 
 set keymap vi-command

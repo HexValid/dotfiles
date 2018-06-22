@@ -1,4 +1,4 @@
-# hexvalid's i3-gaps config - revision 42
+# hexvalid's i3-gaps config - revision 43
 
 # colors from .Xresources
 set_from_resource $foreground .foreground
@@ -36,7 +36,7 @@ set	$w10 10
 set	$mod Mod4
 
 # launcher keybindings
-bindsym $mod+Mod1+1 exec --no-startup-id iceweasel
+bindsym $mod+Mod1+1 exec --no-startup-id inox  --force-device-scale-factor=1
 bindsym $mod+Mod1+2 exec --no-startup-id urxvtc -e ranger
 bindsym $mod+Mod1+3 exec --no-startup-id telegram-desktop
 bindsym $mod+t exec --no-startup-id urxvtc
@@ -47,7 +47,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # special app configs
 for_window [window_role="pop-up"] floating enable
 for_window [title="Telegram"] floating enable,border pixel 1
-for_window [title="Telegram"] move absolute position 1056 16
+for_window [title="Telegram"] move absolute position 1056 21
 for_window [title="Telegram"] resize set 380 480 
 for_window [class="mpv" instance="mpsyt"] floating enable,border pixel 1
 for_window [class="mpv" instance="mpsyt"] resize set 480 360
@@ -62,34 +62,35 @@ exec --no-startup-id feh --bg-center --randomize ~/pictures/wallpapers/*
 exec --no-startup-id xrandr --dpi 96
 exec --no-startup-id xrdb .Xresources
 exec --no-startup-id urxvtd -q -o -f
-exec --no-startup-id sleep 1 && xgamma -gamma 0.95
+exec --no-startup-id sleep 1 && xgamma -gamma 0.85
 exec --no-startup-id unclutter -idle 1
-exec --no-startup-id compton
+# exec --no-startup-id compton --backend glx --paint-on-overlay --refresh-rate 60 --glx-no-stencil --glx-no-rebind-pixmap --glx-swap-method -1 --no-fading-openclose -o 0
 exec --no-startup-id dunst
 
 # design
-font pango:Gohu GohuFont Bold 10 
-new_window pixel 2
-new_float pixel 3
+font pango:Fira Mono Medium 10
+new_window pixel 1
+new_float pixel 2
 client.focused $color4 $color4 $color4 $color12
 client.focused_inactive $color7 $color7 $color7 $color7
 client.unfocused $color8 $color8 $color8 $color8
 
 # bar
 bar {
-	height 16
+	height 21
 	tray_padding 0 
 	strip_workspace_numbers no
 	status_command i3blocks -c ~/.config/i3/i3blocks/i3blocks.conf
 	position top
 	mode dock
 	colors {
-		background $background statusline $foreground
+		background #090909
+		statusline $foreground
 		separator $color0
-		focused_workspace $background $background $color12
-		active_workspace $background $background $color4
-		inactive_workspace $background $background $color8
-		urgent_workspace $background $background $color1
+		focused_workspace  #090909 #090909 $color12
+		active_workspace #090909 #090909 $color4
+		inactive_workspace #090909 #090909 $color8
+		urgent_workspace #090909 #090909 $color1
 		}
 }
 

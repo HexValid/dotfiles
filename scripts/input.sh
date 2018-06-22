@@ -3,4 +3,4 @@ setxkbmap -layout tr -option caps:super
 xcape -e 'Super_L=Escape'
 xmodmap -e 'keycode 135 = Super_R'
 xmodmap -e 'keycode 133 = NoSymbol'
-xset r rate 300 30
+xset r rate 250 25
