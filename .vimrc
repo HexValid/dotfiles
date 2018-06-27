@@ -9,13 +9,16 @@ nmap <leader>n :set relativenumber!<CR>
 command! ToggleCC :let &cc = &cc == '' ? '80' : ''
 nmap <leader>c :let &cc = &cc == '' ? '80' : ''<CR>
 
-autocmd FileType go nmap <leader>gb :GoBuild<CR>
-autocmd FileType go nmap <leader>gr :GoRun<CR>
+autocmd FileType go nmap <leader>b :GoBuild<CR>
+autocmd FileType go nmap <leader>r :GoRun<CR>
 autocmd FileType go nmap <leader>gi :GoImports<CR>
 autocmd FileType go nmap <leader>gd :GoDoc<CR>
-autocmd FileType go nmap <leader>g? :GoInfo<CR>
-autocmd FileType go nmap <leader>gf :GoFmt<CR>
-
+autocmd FileType go nmap <leader>ı :GoInfo<CR>
+autocmd FileType go nmap <leader>l :GoFmt<CR>
+nnoremap <silent> j gj
+nnoremap <silent> k gk
+vnoremap <silent> j gj
+vnoremap <silent> k gk
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
@@ -43,13 +46,13 @@ set history=64
 set nocompatible
 set backspace=indent,eol,start
 set ruler
-set nowrap
+set wrap
 set hlsearch
 set ignorecase
 set smartcase
 set number
-set norelativenumber
-set nolist
+set relativenumber
+set list
 set listchars=tab:→\ ,eol:¬
 set laststatus=2
 set noshowmode
@@ -81,7 +84,7 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#enable_auto_delimiter=1
 let g:neocomplete#sources#syntax#min_keyword_length = 2
-inoremap <expr><leader><tab>     neocomplete#complete_common_string()
+"inoremap <expr><leader><tab>     neocomplete#complete_common_string()
 
 
 "ultisnips

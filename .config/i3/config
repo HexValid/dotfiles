@@ -1,4 +1,4 @@
-# hexvalid's i3-gaps config - revision 43
+# hexvalid's i3-gaps config - revision 44
 
 # colors from .Xresources
 set_from_resource $foreground .foreground
@@ -36,15 +36,16 @@ set	$w10 10
 set	$mod Mod4
 
 # launcher keybindings
-bindsym $mod+Mod1+1 exec --no-startup-id inox  --force-device-scale-factor=1
+bindsym $mod+Mod1+1 exec inox --force-device-scale-factor=1
 bindsym $mod+Mod1+2 exec --no-startup-id urxvtc -e ranger
-bindsym $mod+Mod1+3 exec --no-startup-id telegram-desktop
+bindsym $mod+Mod1+3 exec telegram-desktop
 bindsym $mod+t exec --no-startup-id urxvtc
 bindsym $mod+Mod1+t exec --no-startup-id urxvtc -name pop
 bindsym $mod+Mod1+4 exec --no-startup-id urxvtc -name mps -e mpsyt
 bindsym $mod+d exec --no-startup-id dmenu_run
 
 # special app configs
+assign [class="Gimp"] $w6
 for_window [window_role="pop-up"] floating enable
 for_window [title="Telegram"] floating enable,border pixel 1
 for_window [title="Telegram"] move absolute position 1056 21
@@ -68,7 +69,7 @@ exec --no-startup-id unclutter -idle 1
 exec --no-startup-id dunst
 
 # design
-font pango:Fira Mono Medium 10
+font pango:Fira Code Bold 10
 new_window pixel 1
 new_float pixel 2
 client.focused $color4 $color4 $color4 $color12
@@ -86,11 +87,11 @@ bar {
 	colors {
 		background #090909
 		statusline $foreground
-		separator $color0
-		focused_workspace  #090909 #090909 $color12
+		separator #090909
+		focused_workspace $color4 $color4 #090909 
 		active_workspace #090909 #090909 $color4
 		inactive_workspace #090909 #090909 $color8
-		urgent_workspace #090909 #090909 $color1
+		urgent_workspace $color1 $color1 #090909 
 		}
 }
 
@@ -100,6 +101,8 @@ gaps outer 2
 smart_borders no_gaps
 workspace $w1 gaps inner 0
 workspace $w1 gaps outer 0
+workspace $w6 gaps inner 0
+workspace $w6 gaps outer 0
 
 # shortcuts
 floating_modifier $mod

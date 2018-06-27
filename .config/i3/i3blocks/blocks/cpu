@@ -1,2 +1,8 @@
 #!/bin/bash
-echo $(awk '/^cpu /{print "previdle=" $3 "; prevtotal=" $2+$3 }' /proc/stat); sleep 0.4; eval $(awk '/^cpu /{print "idle=" $3 "; total=" $2+$3 }' /proc/stat); intervaltotal=$((total-${prevtotal:-0})); echo "$((100*( (intervaltotal) - ($idle-${previdle:-0}) ) / (intervaltotal) ))
+cpu=$(top -b -n2 -p 1 | fgrep "Cpu(s)" | tail -1 | awk -F'id,' -v prefix="$prefix" '{ split($1, vs, ","); v=vs[length(vs)]; sub("%", "", v); printf "%s%.0f\n", prefix, 100 - v }')
+if [[ $cpu -gt 90 ]]; then
+	cpu=$(~/scripts/pp 1 $cpu)
+elif [[ $cpu -gt 75 ]]; then
+	cpu=$(~/scripts/pp 3 $cpu)
+fi
+echo $(~/scripts/pp 12 cpu)$(~/scripts/pp 8 :)$cpu

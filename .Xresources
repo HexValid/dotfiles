@@ -4,10 +4,8 @@ Xft.hintstyle: hintslight
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
-URxvt.font: xft:Fira Mono:size=10,style=medium
-URxvt.boldFont: xft:Fira Mono:size=10,style=bold
-URxvt.italicFont: xft:Fira Mono:size=10,style=bold
-URxvt.boldItalicFont: xft:Fira Mono:size=10,style=bold
+URxvt.font: xft:Fira Code:medium:size=10:antialias=true:hinting=true
+URxvt.boldFont: xft:Fira Code:bold:size=10:antialias=true:hinting=true
 URxvt.allow_bold: true
 URxvt.internalBorder: 4
 URxvt.letterSpace: -1
@@ -16,13 +14,19 @@ URxvt.scrollBar: false
 URxvt.saveLines: 118
 URxvt.iso14755: false
 URxvt.iso14755_52: false
-URxvt.perl-ext:
-URxvt.perl-ext-common:
-URxvt.cursorUnderline: 1
+URxvt.perl-ext-common: resize-font
+URxvt.resize-font.smaller: A-j
+URxvt.resize-font.bigger: A-k
+!URxvt.perl-ext:
+!URxvt.perl-ext-common:
+URxvt.urgentOnBell: off
+URxvt.visualBell: off
+URxvt.cursorUnderline: 0
 URxvt.scrollTtyKeypress: true
 URxvt.scrollTtyOutput: false
 URxvt.scrollWithBuffer: false
-URxvt.skipScroll: trueURxvt.color24:  #076678
+URxvt.skipScroll: true
+URxvt.color24:  #076678
 URxvt.color66:  #427b58
 URxvt.color88:  #9d0006
 URxvt.color96:  #8f3f71
@@ -52,14 +56,6 @@ URxvt.color245: #928374
 URxvt.color246: #a89984
 URxvt.color248: #bdae93
 URxvt.color250: #d5c4a1
-
-! -----------------------------------------------------------------------------
-! File: gruvbox-dark.xresources
-! Description: Retro groove colorscheme generalized
-! Author: morhetz <morhetz@gmail.com>
-! Source: https://github.com/morhetz/gruvbox-generalized
-! Last Modified: 6 Sep 2014
-! -----------------------------------------------------------------------------
 
 ! hard contrast: *background: #1d2021
 *background: #282828
