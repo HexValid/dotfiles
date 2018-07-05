@@ -5,7 +5,7 @@ pcm.softvol {
                 name "Software"
                 card 0
         }
-        max_dB 32.0
+        max_dB 24.0
 }
 pcm.!default {
         type            plug

@@ -1,6 +1,11 @@
 "keys
 let mapleader = "\<space>"
 nnoremap <leader>w <C-w>
+nmap <leader>tl :tabn<CR>
+nmap <leader>th :tabp<CR>
+nmap <leader>tn :tabnew<CR>
+nmap <leader>tx :tabclose<CR>
+
 nmap <leader>f :NERDTreeToggle<CR>
 nmap <leader>l :set list!<CR>
 nmap <leader>n :set relativenumber!<CR>

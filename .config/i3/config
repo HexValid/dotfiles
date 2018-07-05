@@ -42,13 +42,13 @@ bindsym $mod+Mod1+3 exec telegram-desktop
 bindsym $mod+t exec --no-startup-id urxvtc
 bindsym $mod+Mod1+t exec --no-startup-id urxvtc -name pop
 bindsym $mod+Mod1+4 exec --no-startup-id urxvtc -name mps -e mpsyt
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run -fn "Fira Code-10:bold" -nb "#090909" -nf "#ebdbb2" -sb "#090909" -sf "#83a598"
 
 # special app configs
 assign [class="Gimp"] $w6
 for_window [window_role="pop-up"] floating enable
 for_window [title="Telegram"] floating enable,border pixel 1
-for_window [title="Telegram"] move absolute position 1056 21
+for_window [title="Telegram"] move absolute position 1056 23
 for_window [title="Telegram"] resize set 380 480 
 for_window [class="mpv" instance="mpsyt"] floating enable,border pixel 1
 for_window [class="mpv" instance="mpsyt"] resize set 480 360
@@ -70,15 +70,15 @@ exec --no-startup-id dunst
 
 # design
 font pango:Fira Code Bold 10
-new_window pixel 1
-new_float pixel 2
+new_window pixel 2
+new_float pixel 3
 client.focused $color4 $color4 $color4 $color12
 client.focused_inactive $color7 $color7 $color7 $color7
 client.unfocused $color8 $color8 $color8 $color8
 
 # bar
 bar {
-	height 21
+	height 23
 	tray_padding 0 
 	strip_workspace_numbers no
 	status_command i3blocks -c ~/.config/i3/i3blocks/i3blocks.conf
@@ -97,7 +97,7 @@ bar {
 
 # gaps
 gaps inner 12
-gaps outer 2
+gaps outer 3
 smart_borders no_gaps
 workspace $w1 gaps inner 0
 workspace $w1 gaps outer 0
